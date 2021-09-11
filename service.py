@@ -66,9 +66,9 @@ def create_app():
                             help='Number of records to be read from offset',
                             required=True)
 
-    @api.route('/get')
+    @api.route('/list')
     @api.expect(get_parser)
-    class GetService(Resource):
+    class ListService(Resource):
         @api.expect(get_parser)
         @api.doc(responses={"response": 'json'})
         def post(self):
